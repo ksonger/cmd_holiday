@@ -1,5 +1,5 @@
 window.MainModel = Backbone.Model.extend({
-    build:function (lib, img, cjs) {
+    build: function (lib, img, cjs) {
         var p = new cjs.Container();
 
         // symbols:
@@ -128,15 +128,15 @@ window.MainModel = Backbone.Model.extend({
             this.instance_4 = new lib.UFO();
             this.instance_4.setTransform(57 * app.base_scale, 4 * app.base_scale, 0.179, 0.179, -15);
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance}
-            ]}).to({state:[
-                {t:this.instance_1}
-            ]}, 1).to({state:[
-                {t:this.instance_2}
-            ]}, 1).to({state:[
-                {t:this.instance_4}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance}
+            ]}).to({state: [
+                    {t: this.instance_1}
+                ]}, 1).to({state: [
+                    {t: this.instance_2}
+                ]}, 1).to({state: [
+                    {t: this.instance_4}
+                ]}, 1).wait(1));
 
         }).prototype = p = new cjs.MovieClip();
         p.nominalBounds = new cjs.Rectangle(0, 0, 85 * app.base_scale, 85 * app.base_scale);
@@ -156,15 +156,15 @@ window.MainModel = Backbone.Model.extend({
             this.instance_8 = new lib.UFO();
             this.instance_8.setTransform(274 * app.base_scale, -5 * app.base_scale, 0.265, 0.265, -11);
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance_5}
-            ]}).to({state:[
-                {t:this.instance_6}
-            ]}, 1).to({state:[
-                {t:this.instance_7}
-            ]}, 1).to({state:[
-                {t:this.instance_8}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance_5}
+            ]}).to({state: [
+                    {t: this.instance_6}
+                ]}, 1).to({state: [
+                    {t: this.instance_7}
+                ]}, 1).to({state: [
+                    {t: this.instance_8}
+                ]}, 1).wait(1));
 
         }).prototype = p = new cjs.MovieClip();
         p.nominalBounds = new cjs.Rectangle(0, 0, 85 * app.base_scale, 85 * app.base_scale);
@@ -190,17 +190,17 @@ window.MainModel = Backbone.Model.extend({
             this.instance_14 = new lib.UFO();
             this.instance_14.setTransform(175 * app.base_scale, -103 * app.base_scale, 0.441, 0.441, -23);
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance_9}
-            ]}).to({state:[
-                {t:this.instance_10}
-            ]}, 1).to({state:[
-                {t:this.instance_12},
-                {t:this.instance_11}
-            ]}, 1).to({state:[
-                {t:this.instance_14},
-                {t:this.instance_13}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance_9}
+            ]}).to({state: [
+                    {t: this.instance_10}
+                ]}, 1).to({state: [
+                    {t: this.instance_12},
+                    {t: this.instance_11}
+                ]}, 1).to({state: [
+                    {t: this.instance_14},
+                    {t: this.instance_13}
+                ]}, 1).wait(1));
 
         }).prototype = p = new cjs.MovieClip();
         p.nominalBounds = new cjs.Rectangle(0, 0, 85 * app.base_scale, 85 * app.base_scale);
@@ -221,15 +221,15 @@ window.MainModel = Backbone.Model.extend({
             this.instance_18 = new lib.UFO();
             this.instance_18.setTransform(-30 * app.base_scale, -3 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance_15}
-            ]}).to({state:[
-                {t:this.instance_16}
-            ]}, 1).to({state:[
-                {t:this.instance_17}
-            ]}, 1).to({state:[
-                {t:this.instance_18}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance_15}
+            ]}).to({state: [
+                    {t: this.instance_16}
+                ]}, 1).to({state: [
+                    {t: this.instance_17}
+                ]}, 1).to({state: [
+                    {t: this.instance_18}
+                ]}, 1).wait(1));
 
         }).prototype = p = new cjs.MovieClip();
         p.nominalBounds = new cjs.Rectangle(0, 0, 85 * app.base_scale, 85 * app.base_scale);
@@ -276,10 +276,10 @@ window.MainModel = Backbone.Model.extend({
             this.change_deco = function (num) {
                 var elements = ['snow', 'stars', 'lights', 'ships'];
                 if (this.selectedElement == 'snow' || this.selectedElement == 'stars' || this.selectedElement == 'lights') {
-                    cjs.Tween.get(app.exportRoot.decorations).wait(300).to({y:-200 * app.base_scale}, 500, cjs.Ease.backIn).call(app.exportRoot.decorations.swap, [num - 1]);
+                    cjs.Tween.get(app.exportRoot.decorations).wait(300).to({y: -200 * app.base_scale}, 500, cjs.Ease.backIn).call(app.exportRoot.decorations.swap, [num - 1]);
                 }
                 if (this.selectedElement == 'ships') {
-                    cjs.Tween.get(app.exportRoot.decorations).wait(300).to({scaleX:.7, scaleY:.7, alpha:0, x:360 * app.base_scale}, 500, cjs.Ease.circIn).call(app.exportRoot.decorations.swap, [num - 1]);
+                    cjs.Tween.get(app.exportRoot.decorations).wait(300).to({scaleX: .7, scaleY: .7, alpha: 0, x: 360 * app.base_scale}, 500, cjs.Ease.circIn).call(app.exportRoot.decorations.swap, [num - 1]);
                 }
                 this.selectedElement = elements[num - 1];
                 app.exportRoot.dialogs.hide_dialog();
@@ -299,11 +299,11 @@ window.MainModel = Backbone.Model.extend({
                         app.exportRoot.decorations.deco3.rotation = 80;
                         app.exportRoot.decorations.deco3.y = 0;
                         app.exportRoot.decorations.deco4.rotation = -90;
-                        cjs.Tween.get(app.exportRoot.decorations).wait(100).to({y:70 * app.base_scale}, 500, cjs.Ease.backOut);
-                        cjs.Tween.get(app.exportRoot.decorations.deco1).wait(150).to({rotation:0, y:56 * app.base_scale}, 600, cjs.Ease.circOut);
-                        cjs.Tween.get(app.exportRoot.decorations.deco2).wait(230).to({rotation:0}, 400, cjs.Ease.circOut);
-                        cjs.Tween.get(app.exportRoot.decorations.deco3).wait(250).to({rotation:0, y:94 * app.base_scale}, 700, cjs.Ease.circOut);
-                        cjs.Tween.get(app.exportRoot.decorations.deco4).wait(190).to({rotation:0}, 600, cjs.Ease.circOut);
+                        cjs.Tween.get(app.exportRoot.decorations).wait(100).to({y: 70 * app.base_scale}, 500, cjs.Ease.backOut);
+                        cjs.Tween.get(app.exportRoot.decorations.deco1).wait(150).to({rotation: 0, y: 56 * app.base_scale}, 600, cjs.Ease.circOut);
+                        cjs.Tween.get(app.exportRoot.decorations.deco2).wait(230).to({rotation: 0}, 400, cjs.Ease.circOut);
+                        cjs.Tween.get(app.exportRoot.decorations.deco3).wait(250).to({rotation: 0, y: 94 * app.base_scale}, 700, cjs.Ease.circOut);
+                        cjs.Tween.get(app.exportRoot.decorations.deco4).wait(190).to({rotation: 0}, 600, cjs.Ease.circOut);
                     }
                     if (this.selectedElement == "stars") {
                         app.exportRoot.decorations.deco1.rotation = -90;
@@ -312,20 +312,20 @@ window.MainModel = Backbone.Model.extend({
                         app.exportRoot.decorations.deco3.rotation = -60;
                         app.exportRoot.decorations.deco4.rotation = 60;
                         app.exportRoot.decorations.deco4.y = 0;
-                        cjs.Tween.get(app.exportRoot.decorations).wait(100).to({y:70 * app.base_scale}, 500, cjs.Ease.backOut);
-                        cjs.Tween.get(app.exportRoot.decorations.deco1).wait(150).to({rotation:0, y:56 * app.base_scale}, 600, cjs.Ease.circOut);
-                        cjs.Tween.get(app.exportRoot.decorations.deco2).wait(230).to({rotation:0, y:197 * app.base_scale}, 400, cjs.Ease.circOut);
-                        cjs.Tween.get(app.exportRoot.decorations.deco3).wait(100).to({rotation:0, y:94 * app.base_scale}, 500, cjs.Ease.circOut);
-                        cjs.Tween.get(app.exportRoot.decorations.deco4).wait(190).to({rotation:0, y:56 * app.base_scale}, 600, cjs.Ease.circOut);
+                        cjs.Tween.get(app.exportRoot.decorations).wait(100).to({y: 70 * app.base_scale}, 500, cjs.Ease.backOut);
+                        cjs.Tween.get(app.exportRoot.decorations.deco1).wait(150).to({rotation: 0, y: 56 * app.base_scale}, 600, cjs.Ease.circOut);
+                        cjs.Tween.get(app.exportRoot.decorations.deco2).wait(230).to({rotation: 0, y: 197 * app.base_scale}, 400, cjs.Ease.circOut);
+                        cjs.Tween.get(app.exportRoot.decorations.deco3).wait(100).to({rotation: 0, y: 94 * app.base_scale}, 500, cjs.Ease.circOut);
+                        cjs.Tween.get(app.exportRoot.decorations.deco4).wait(190).to({rotation: 0, y: 56 * app.base_scale}, 600, cjs.Ease.circOut);
                     }
                 }
                 if (this.selectedElement == 'lights') {
                     app.exportRoot.decorations.alpha = 1;
                     app.exportRoot.decorations.setTransform(250 * app.base_scale, -200 * app.base_scale, 1, 1);
-                    cjs.Tween.get(app.exportRoot.decorations).wait(100).to({y:70 * app.base_scale}, 1500, cjs.Ease.elasticOut);
+                    cjs.Tween.get(app.exportRoot.decorations).wait(100).to({y: 70 * app.base_scale}, 1500, cjs.Ease.elasticOut);
                 }
                 if (this.selectedElement == 'ships') {
-                    cjs.Tween.get(app.exportRoot.decorations).wait(1).to({scaleX:1, scaleY:1, alpha:1, x:250 * app.base_scale, y:70 * app.base_scale}, 1, cjs.Ease.circOut);
+                    cjs.Tween.get(app.exportRoot.decorations).wait(1).to({scaleX: 1, scaleY: 1, alpha: 1, x: 250 * app.base_scale, y: 70 * app.base_scale}, 1, cjs.Ease.circOut);
 
                     app.exportRoot.decorations.deco1.rotation = 30;
                     app.exportRoot.decorations.deco1.alpha = 0;
@@ -351,10 +351,10 @@ window.MainModel = Backbone.Model.extend({
                     app.exportRoot.decorations.deco4.scaleX = .6;
                     app.exportRoot.decorations.deco4.scaleY = .6;
 
-                    cjs.Tween.get(app.exportRoot.decorations.deco1).wait(150).to({rotation:0, alpha:1, x:80 * app.base_scale, y:56 * app.base_scale, scaleX:1, scaleY:1}, 800, cjs.Ease.circOut);
-                    cjs.Tween.get(app.exportRoot.decorations.deco2).wait(0).to({rotation:0, alpha:1, x:200.6 * app.base_scale, y:197 * app.base_scale, scaleX:1, scaleY:1}, 1200, cjs.Ease.cubicInOut);
-                    cjs.Tween.get(app.exportRoot.decorations.deco3).wait(200).to({rotation:0, alpha:1, x:622.7 * app.base_scale, y:94 * app.base_scale, scaleX:1, scaleY:1}, 900, cjs.Ease.circOut);
-                    cjs.Tween.get(app.exportRoot.decorations.deco4).wait(450).to({rotation:0, alpha:1, x:914.5 * app.base_scale, y:56 * app.base_scale, scaleX:1, scaleY:1}, 600, cjs.Ease.circOut);
+                    cjs.Tween.get(app.exportRoot.decorations.deco1).wait(150).to({rotation: 0, alpha: 1, x: 80 * app.base_scale, y: 56 * app.base_scale, scaleX: 1, scaleY: 1}, 800, cjs.Ease.circOut);
+                    cjs.Tween.get(app.exportRoot.decorations.deco2).wait(0).to({rotation: 0, alpha: 1, x: 200.6 * app.base_scale, y: 197 * app.base_scale, scaleX: 1, scaleY: 1}, 1200, cjs.Ease.cubicInOut);
+                    cjs.Tween.get(app.exportRoot.decorations.deco3).wait(200).to({rotation: 0, alpha: 1, x: 622.7 * app.base_scale, y: 94 * app.base_scale, scaleX: 1, scaleY: 1}, 900, cjs.Ease.circOut);
+                    cjs.Tween.get(app.exportRoot.decorations.deco4).wait(450).to({rotation: 0, alpha: 1, x: 914.5 * app.base_scale, y: 56 * app.base_scale, scaleX: 1, scaleY: 1}, 600, cjs.Ease.circOut);
                 }
                 if (!app.muted) {
                     if (num == 0) {
@@ -434,28 +434,28 @@ window.MainModel = Backbone.Model.extend({
             };
 
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance}
-            ]}).to({state:[
-                {t:this.instance_1}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance}
+            ]}).to({state: [
+                    {t: this.instance_1}
+                ]}, 1).wait(1));
 
             this.gotoAndStop(0);
 
         }).prototype = p = new cjs.MovieClip();
         p.nominalBounds = new cjs.Rectangle(0, 0, 70 * app.base_scale, 70 * app.base_scale);
 
-        (this.logo_btn = function() {
+        (this.logo_btn = function () {
             this.initialize();
 
             // Layer 1
             this.shape = new cjs.Shape();
             this.shape.graphics.f("rgba(255,0,0,.01)").s().p("AF+CjIr7AAIAAlFIL7AAIAAFF").cp();
-            this.shape.setTransform(38.3 * app.base_scale,16.4 * app.base_scale, app.base_scale, app.base_scale);
+            this.shape.setTransform(38.3 * app.base_scale, 16.4 * app.base_scale, app.base_scale, app.base_scale);
 
             this.addChild(this.shape);
         }).prototype = p = new cjs.Container();
-        p.nominalBounds = new cjs.Rectangle(0,0,76.5 * app.base_scale,32.8 * app.base_scale);
+        p.nominalBounds = new cjs.Rectangle(0, 0, 76.5 * app.base_scale, 32.8 * app.base_scale);
 
         (this.shop_window = function () {
             this.initialize();
@@ -465,7 +465,7 @@ window.MainModel = Backbone.Model.extend({
 
             // logo_hitarea
             this.btn = new lib.logo_btn();
-            this.btn.setTransform(324.1 * app.base_scale,651.3 * app.base_scale,1,1,0,0,0,38.3 * app.base_scale,16.4 * app.base_scale);
+            this.btn.setTransform(324.1 * app.base_scale, 651.3 * app.base_scale, 1, 1, 0, 0, 0, 38.3 * app.base_scale, 16.4 * app.base_scale);
 
             this.btn.onMouseOver = function (e) {
                 document.body.style.cursor = 'pointer';
@@ -484,7 +484,7 @@ window.MainModel = Backbone.Model.extend({
                 this.frost_instance = new lib.shopwindow_frost();
                 this.frost_instance.alpha = 0;
                 this.addChild(this.frost_instance);
-                cjs.Tween.get(this.frost_instance).to({alpha:1}, 4000);
+                cjs.Tween.get(this.frost_instance).to({alpha: 1}, 4000);
             }
         }).prototype = p = new cjs.Container();
         p.nominalBounds = new cjs.Rectangle(0, 0, 1500 * app.base_scale, 1000 * app.base_scale);
@@ -573,15 +573,15 @@ window.MainModel = Backbone.Model.extend({
             this.instance_3 = new lib.furniture_03_snowman1();
 
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance}
-            ]}).to({state:[
-                {t:this.instance_1}
-            ]}, 1).to({state:[
-                {t:this.instance_2}
-            ]}, 1).to({state:[
-                {t:this.instance_3}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance}
+            ]}).to({state: [
+                    {t: this.instance_1}
+                ]}, 1).to({state: [
+                    {t: this.instance_2}
+                ]}, 1).to({state: [
+                    {t: this.instance_3}
+                ]}, 1).wait(1));
 
             this.gotoAndStop(0);
 
@@ -613,15 +613,15 @@ window.MainModel = Backbone.Model.extend({
             this.instance_3 = new lib.furniture_03_snowman2();
 
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance}
-            ]}).to({state:[
-                {t:this.instance_1}
-            ]}, 1).to({state:[
-                {t:this.instance_2}
-            ]}, 1).to({state:[
-                {t:this.instance_3}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance}
+            ]}).to({state: [
+                    {t: this.instance_1}
+                ]}, 1).to({state: [
+                    {t: this.instance_2}
+                ]}, 1).to({state: [
+                    {t: this.instance_3}
+                ]}, 1).wait(1));
 
             this.gotoAndStop(0);
 
@@ -667,8 +667,8 @@ window.MainModel = Backbone.Model.extend({
                         cjs.SoundJS.play("snowmen", cjs.SoundJS.INTERRUPT_ANY);
                     }
                 }
-                cjs.Tween.get(app.exportRoot.midground.rightside).wait(300).to({x:1240 * app.base_scale}, 500, cjs.Ease.cubicIn).call(app.exportRoot.midground.swap, [num - 1]).to({x:948 * app.base_scale}, 500, cjs.Ease.cubicOut);
-                cjs.Tween.get(app.exportRoot.midground.leftside).wait(300).to({x:-339 * app.base_scale}, 500, cjs.Ease.cubicIn).to({x:257 * app.base_scale}, 500, cjs.Ease.cubicOut);
+                cjs.Tween.get(app.exportRoot.midground.rightside).wait(300).to({x: 1240 * app.base_scale}, 500, cjs.Ease.cubicIn).call(app.exportRoot.midground.swap, [num - 1]).to({x: 948 * app.base_scale}, 500, cjs.Ease.cubicOut);
+                cjs.Tween.get(app.exportRoot.midground.leftside).wait(300).to({x: -339 * app.base_scale}, 500, cjs.Ease.cubicIn).to({x: 257 * app.base_scale}, 500, cjs.Ease.cubicOut);
                 app.exportRoot.dialogs.hide_dialog();
             };
             this.swap = function (num) {
@@ -711,7 +711,7 @@ window.MainModel = Backbone.Model.extend({
                 document.body.style.cursor = 'default';
             };
             this.change_head = function (num) {
-                cjs.Tween.get(app.exportRoot.characters.grp_man1.man_head).wait(300).to({x:Math.round(133 * app.base_scale), y:Math.round(64 * app.base_scale), scaleX:.5, scaleY:.5, alpha:0}, 300, cjs.Ease.cubicIn).call(app.exportRoot.characters.grp_man1.swap_head, [num - 1]).to({x:Math.round(92 * app.base_scale), y:Math.round(6 * app.base_scale), scaleX:1, scaleY:1, alpha:1}, 600, cjs.Ease.elasticInOut);
+                cjs.Tween.get(app.exportRoot.characters.grp_man1.man_head).wait(300).to({x: Math.round(133 * app.base_scale), y: Math.round(64 * app.base_scale), scaleX: .5, scaleY: .5, alpha: 0}, 300, cjs.Ease.cubicIn).call(app.exportRoot.characters.grp_man1.swap_head, [num - 1]).to({x: Math.round(92 * app.base_scale), y: Math.round(6 * app.base_scale), scaleX: 1, scaleY: 1, alpha: 1}, 600, cjs.Ease.elasticInOut);
                 app.exportRoot.dialogs.hide_dialog();
             };
             this.swap_head = function (num) {
@@ -730,8 +730,8 @@ window.MainModel = Backbone.Model.extend({
                 app.exportRoot.characters.grp_man1.man_head.x = 55 * app.base_scale;
                 app.exportRoot.characters.grp_man1.man_head.y = 53 * app.base_scale;
                 app.exportRoot.characters.grp_man1.man_head.rotation = -30;
-                cjs.Tween.get(app.exportRoot.characters.grp_man1).to({x:0}, 400, cjs.Ease.circOut);
-                cjs.Tween.get(app.exportRoot.characters.grp_man1.man_head).to({rotation:0, x:92 * app.base_scale, y:6 * app.base_scale}, 500, cjs.Ease.backInOut);
+                cjs.Tween.get(app.exportRoot.characters.grp_man1).to({x: 0}, 400, cjs.Ease.circOut);
+                cjs.Tween.get(app.exportRoot.characters.grp_man1.man_head).to({rotation: 0, x: 92 * app.base_scale, y: 6 * app.base_scale}, 500, cjs.Ease.backInOut);
             };
 
             this.change_body = function (num) {
@@ -740,8 +740,8 @@ window.MainModel = Backbone.Model.extend({
                 }
 
                 app.exportRoot.dialogs.hide_dialog();
-                cjs.Tween.get(app.exportRoot.characters.grp_man1.man_head).wait(300).to({rotation:30, x:147 * app.base_scale, y:-20 * app.base_scale}, 200, cjs.Ease.circIn);
-                cjs.Tween.get(app.exportRoot.characters.grp_man1).wait(300).to({x:-600 * app.base_scale}, 300, cjs.Ease.circIn).call(app.exportRoot.characters.grp_man1.swap_body, [num - 1]);
+                cjs.Tween.get(app.exportRoot.characters.grp_man1.man_head).wait(300).to({rotation: 30, x: 147 * app.base_scale, y: -20 * app.base_scale}, 200, cjs.Ease.circIn);
+                cjs.Tween.get(app.exportRoot.characters.grp_man1).wait(300).to({x: -600 * app.base_scale}, 300, cjs.Ease.circIn).call(app.exportRoot.characters.grp_man1.swap_body, [num - 1]);
             };
 
             this.addChild(this.man_body, this.man_head);
@@ -780,7 +780,7 @@ window.MainModel = Backbone.Model.extend({
             };
 
             this.change_head = function (num) {
-                cjs.Tween.get(app.exportRoot.characters.grp_woman.woman_head).wait(300).to({x:Math.round(142 * app.base_scale), y:Math.round(84 * app.base_scale), scaleX:.5, scaleY:.5, alpha:0}, 300, cjs.Ease.cubicIn).call(app.exportRoot.characters.grp_woman.swap_head, [num - 1]).to({x:Math.round(104 * app.base_scale), y:Math.round(59 * app.base_scale), scaleX:1, scaleY:1, alpha:1}, 600, cjs.Ease.elasticInOut);
+                cjs.Tween.get(app.exportRoot.characters.grp_woman.woman_head).wait(300).to({x: Math.round(142 * app.base_scale), y: Math.round(84 * app.base_scale), scaleX: .5, scaleY: .5, alpha: 0}, 300, cjs.Ease.cubicIn).call(app.exportRoot.characters.grp_woman.swap_head, [num - 1]).to({x: Math.round(104 * app.base_scale), y: Math.round(59 * app.base_scale), scaleX: 1, scaleY: 1, alpha: 1}, 600, cjs.Ease.elasticInOut);
                 app.exportRoot.dialogs.hide_dialog();
             };
             this.swap_head = function (num) {
@@ -795,11 +795,11 @@ window.MainModel = Backbone.Model.extend({
             };
             this.swap_body = function (num) {
                 app.exportRoot.characters.grp_woman.woman_body.gotoAndStop(num);
-                cjs.Tween.get(app.exportRoot.characters.grp_woman).to({x:227 * app.base_scale}, 400, cjs.Ease.circOut);
+                cjs.Tween.get(app.exportRoot.characters.grp_woman).to({x: 227 * app.base_scale}, 400, cjs.Ease.circOut);
                 app.exportRoot.characters.grp_woman.woman_head.rotation = -30;
                 app.exportRoot.characters.grp_woman.woman_head.x = 70 * app.base_scale;
                 app.exportRoot.characters.grp_woman.woman_head.y = 100 * app.base_scale;
-                cjs.Tween.get(app.exportRoot.characters.grp_woman.woman_head).to({rotation:0, x:104 * app.base_scale, y:59 * app.base_scale}, 600, cjs.Ease.backInOut);
+                cjs.Tween.get(app.exportRoot.characters.grp_woman.woman_head).to({rotation: 0, x: 104 * app.base_scale, y: 59 * app.base_scale}, 600, cjs.Ease.backInOut);
             };
 
             this.change_body = function (num) {
@@ -807,8 +807,8 @@ window.MainModel = Backbone.Model.extend({
                     cjs.SoundJS.play("wardrobe_change", cjs.SoundJS.INTERRUPT_ANY);
                 }
                 app.exportRoot.dialogs.hide_dialog();
-                cjs.Tween.get(app.exportRoot.characters.grp_woman.woman_head).wait(300).to({rotation:30, x:145 * app.base_scale, y:25 * app.base_scale}, 300, cjs.Ease.circIn);
-                cjs.Tween.get(app.exportRoot.characters.grp_woman).wait(300).to({x:-700 * app.base_scale}, 400, cjs.Ease.circIn).call(app.exportRoot.characters.grp_woman.swap_body, [num - 1]);
+                cjs.Tween.get(app.exportRoot.characters.grp_woman.woman_head).wait(300).to({rotation: 30, x: 145 * app.base_scale, y: 25 * app.base_scale}, 300, cjs.Ease.circIn);
+                cjs.Tween.get(app.exportRoot.characters.grp_woman).wait(300).to({x: -700 * app.base_scale}, 400, cjs.Ease.circIn).call(app.exportRoot.characters.grp_woman.swap_body, [num - 1]);
             };
 
             this.addChild(this.woman_body, this.woman_head);
@@ -844,7 +844,7 @@ window.MainModel = Backbone.Model.extend({
                 document.body.style.cursor = 'default';
             };
             this.change_head = function (num) {
-                cjs.Tween.get(app.exportRoot.characters.grp_man2.man_head).wait(300).to({x:Math.round(108 * app.base_scale), y:Math.round(62 * app.base_scale), scaleX:.5, scaleY:.5, alpha:0}, 300, cjs.Ease.cubicIn).call(app.exportRoot.characters.grp_man2.swap_head, [num - 1]).to({x:Math.round(79 * app.base_scale), y:Math.round(18 * app.base_scale), scaleX:1, scaleY:1, alpha:1}, 600, cjs.Ease.elasticInOut);
+                cjs.Tween.get(app.exportRoot.characters.grp_man2.man_head).wait(300).to({x: Math.round(108 * app.base_scale), y: Math.round(62 * app.base_scale), scaleX: .5, scaleY: .5, alpha: 0}, 300, cjs.Ease.cubicIn).call(app.exportRoot.characters.grp_man2.swap_head, [num - 1]).to({x: Math.round(79 * app.base_scale), y: Math.round(18 * app.base_scale), scaleX: 1, scaleY: 1, alpha: 1}, 600, cjs.Ease.elasticInOut);
                 app.exportRoot.dialogs.hide_dialog();
             };
             this.swap_head = function (num) {
@@ -863,8 +863,8 @@ window.MainModel = Backbone.Model.extend({
                 app.exportRoot.characters.grp_man2.man_head.x = 135 * app.base_scale;
                 app.exportRoot.characters.grp_man2.man_head.y = 2 * app.base_scale;
                 app.exportRoot.characters.grp_man2.man_head.rotation = 30;
-                cjs.Tween.get(app.exportRoot.characters.grp_man2).to({x:488 * app.base_scale}, 400, cjs.Ease.circOut);
-                cjs.Tween.get(app.exportRoot.characters.grp_man2.man_head).to({rotation:0, x:79 * app.base_scale, y:18 * app.base_scale}, 500, cjs.Ease.backInOut);
+                cjs.Tween.get(app.exportRoot.characters.grp_man2).to({x: 488 * app.base_scale}, 400, cjs.Ease.circOut);
+                cjs.Tween.get(app.exportRoot.characters.grp_man2.man_head).to({rotation: 0, x: 79 * app.base_scale, y: 18 * app.base_scale}, 500, cjs.Ease.backInOut);
             };
 
             this.change_body = function (num) {
@@ -872,8 +872,8 @@ window.MainModel = Backbone.Model.extend({
                 if (!app.muted) {
                     cjs.SoundJS.play("wardrobe_change", cjs.SoundJS.INTERRUPT_ANY);
                 }
-                cjs.Tween.get(app.exportRoot.characters.grp_man2.man_head).wait(300).to({rotation:-30, x:35 * app.base_scale, y:62 * app.base_scale}, 200, cjs.Ease.circIn);
-                cjs.Tween.get(app.exportRoot.characters.grp_man2).wait(300).to({x:1155 * app.base_scale}, 300, cjs.Ease.circIn).call(app.exportRoot.characters.grp_man2.swap_body, [num - 1]);
+                cjs.Tween.get(app.exportRoot.characters.grp_man2.man_head).wait(300).to({rotation: -30, x: 35 * app.base_scale, y: 62 * app.base_scale}, 200, cjs.Ease.circIn);
+                cjs.Tween.get(app.exportRoot.characters.grp_man2).wait(300).to({x: 1155 * app.base_scale}, 300, cjs.Ease.circIn).call(app.exportRoot.characters.grp_man2.swap_body, [num - 1]);
             };
             this.addChild(this.man_body, this.man_head);
             this.man_head.gotoAndStop(0);
@@ -955,13 +955,13 @@ window.MainModel = Backbone.Model.extend({
 
             this.instance_2 = new lib.body1_suit02_aloha();
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance}
-            ]}).to({state:[
-                {t:this.instance_1}
-            ]}, 1).to({state:[
-                {t:this.instance_2}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance}
+            ]}).to({state: [
+                    {t: this.instance_1}
+                ]}, 1).to({state: [
+                    {t: this.instance_2}
+                ]}, 1).wait(1));
 
         }).prototype = p = new cjs.MovieClip();
         p.nominalBounds = new cjs.Rectangle(0, 0, 300 * app.base_scale, 470 * app.base_scale);
@@ -987,13 +987,13 @@ window.MainModel = Backbone.Model.extend({
 
             this.instance_2 = new lib.body2_suit03_christmasjacket();
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance}
-            ]}).to({state:[
-                {t:this.instance_1}
-            ]}, 1).to({state:[
-                {t:this.instance_2}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance}
+            ]}).to({state: [
+                    {t: this.instance_1}
+                ]}, 1).to({state: [
+                    {t: this.instance_2}
+                ]}, 1).wait(1));
 
         }).prototype = p = new cjs.MovieClip();
         p.nominalBounds = new cjs.Rectangle(0, 0, 300 * app.base_scale, 450 * app.base_scale);
@@ -1019,13 +1019,13 @@ window.MainModel = Backbone.Model.extend({
 
             this.instance_2 = new lib.body3_suit02_itchysweater();
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance}
-            ]}).to({state:[
-                {t:this.instance_1}
-            ]}, 1).to({state:[
-                {t:this.instance_2}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance}
+            ]}).to({state: [
+                    {t: this.instance_1}
+                ]}, 1).to({state: [
+                    {t: this.instance_2}
+                ]}, 1).wait(1));
 
         }).prototype = p = new cjs.MovieClip();
         p.nominalBounds = new cjs.Rectangle(0, 0, 300 * app.base_scale, 450 * app.base_scale);
@@ -1086,27 +1086,27 @@ window.MainModel = Backbone.Model.extend({
             this.instance_9 = new lib.head1_02_Timberwolf();
 
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance}
-            ]}).to({state:[
-                {t:this.instance_1}
-            ]}, 1).to({state:[
-                {t:this.instance_2}
-            ]}, 1).to({state:[
-                {t:this.instance_3}
-            ]}, 1).to({state:[
-                {t:this.instance_4}
-            ]}, 1).to({state:[
-                {t:this.instance_5}
-            ]}, 1).to({state:[
-                {t:this.instance_6}
-            ]}, 1).to({state:[
-                {t:this.instance_7}
-            ]}, 1).to({state:[
-                {t:this.instance_8}
-            ]}, 1).to({state:[
-                {t:this.instance_9}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance}
+            ]}).to({state: [
+                    {t: this.instance_1}
+                ]}, 1).to({state: [
+                    {t: this.instance_2}
+                ]}, 1).to({state: [
+                    {t: this.instance_3}
+                ]}, 1).to({state: [
+                    {t: this.instance_4}
+                ]}, 1).to({state: [
+                    {t: this.instance_5}
+                ]}, 1).to({state: [
+                    {t: this.instance_6}
+                ]}, 1).to({state: [
+                    {t: this.instance_7}
+                ]}, 1).to({state: [
+                    {t: this.instance_8}
+                ]}, 1).to({state: [
+                    {t: this.instance_9}
+                ]}, 1).wait(1));
 
         }).prototype = p = new cjs.MovieClip();
         p.nominalBounds = new cjs.Rectangle(0, 0, 121 * app.base_scale, 126 * app.base_scale);
@@ -1161,27 +1161,27 @@ window.MainModel = Backbone.Model.extend({
 
             this.instance_9 = new lib.head2_10_MrsCoffee();
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance}
-            ]}).to({state:[
-                {t:this.instance_1}
-            ]}, 1).to({state:[
-                {t:this.instance_2}
-            ]}, 1).to({state:[
-                {t:this.instance_3}
-            ]}, 1).to({state:[
-                {t:this.instance_4}
-            ]}, 1).to({state:[
-                {t:this.instance_5}
-            ]}, 1).to({state:[
-                {t:this.instance_6}
-            ]}, 1).to({state:[
-                {t:this.instance_7}
-            ]}, 1).to({state:[
-                {t:this.instance_8}
-            ]}, 1).to({state:[
-                {t:this.instance_9}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance}
+            ]}).to({state: [
+                    {t: this.instance_1}
+                ]}, 1).to({state: [
+                    {t: this.instance_2}
+                ]}, 1).to({state: [
+                    {t: this.instance_3}
+                ]}, 1).to({state: [
+                    {t: this.instance_4}
+                ]}, 1).to({state: [
+                    {t: this.instance_5}
+                ]}, 1).to({state: [
+                    {t: this.instance_6}
+                ]}, 1).to({state: [
+                    {t: this.instance_7}
+                ]}, 1).to({state: [
+                    {t: this.instance_8}
+                ]}, 1).to({state: [
+                    {t: this.instance_9}
+                ]}, 1).wait(1));
 
         }).prototype = p = new cjs.MovieClip();
         p.nominalBounds = new cjs.Rectangle(0, 0, 121 * app.base_scale, 126 * app.base_scale);
@@ -1236,27 +1236,27 @@ window.MainModel = Backbone.Model.extend({
 
             this.instance_9 = new lib.head3_10_Hotrod();
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance}
-            ]}).to({state:[
-                {t:this.instance_1}
-            ]}, 1).to({state:[
-                {t:this.instance_2}
-            ]}, 1).to({state:[
-                {t:this.instance_3}
-            ]}, 1).to({state:[
-                {t:this.instance_4}
-            ]}, 1).to({state:[
-                {t:this.instance_5}
-            ]}, 1).to({state:[
-                {t:this.instance_6}
-            ]}, 1).to({state:[
-                {t:this.instance_7}
-            ]}, 1).to({state:[
-                {t:this.instance_8}
-            ]}, 1).to({state:[
-                {t:this.instance_9}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance}
+            ]}).to({state: [
+                    {t: this.instance_1}
+                ]}, 1).to({state: [
+                    {t: this.instance_2}
+                ]}, 1).to({state: [
+                    {t: this.instance_3}
+                ]}, 1).to({state: [
+                    {t: this.instance_4}
+                ]}, 1).to({state: [
+                    {t: this.instance_5}
+                ]}, 1).to({state: [
+                    {t: this.instance_6}
+                ]}, 1).to({state: [
+                    {t: this.instance_7}
+                ]}, 1).to({state: [
+                    {t: this.instance_8}
+                ]}, 1).to({state: [
+                    {t: this.instance_9}
+                ]}, 1).wait(1));
 
         }).prototype = p = new cjs.MovieClip();
         p.nominalBounds = new cjs.Rectangle(0, 0, 121 * app.base_scale, 126 * app.base_scale);
@@ -1496,11 +1496,11 @@ window.MainModel = Backbone.Model.extend({
 
             this.show = function () {
                 this.visible = true;
-                cjs.Tween.get(this).to({alpha:1}, 750);
+                cjs.Tween.get(this).to({alpha: 1}, 750);
             };
             this.hide = function () {
                 this.visible = true;
-                cjs.Tween.get(this).to({alpha:0, visible:false}, 750);
+                cjs.Tween.get(this).to({alpha: 0, visible: false}, 750);
             }
         }).prototype = p = new cjs.Container();
         p.nominalBounds = new cjs.Rectangle(0, 0, 1500 * app.base_scale, 1000 * app.base_scale);
@@ -1624,11 +1624,11 @@ window.MainModel = Backbone.Model.extend({
                 this.gotoAndStop(0);
             };
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance}
-            ]}).to({state:[
-                {t:this.instance_1}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance}
+            ]}).to({state: [
+                    {t: this.instance_1}
+                ]}, 1).wait(1));
 
             this.gotoAndStop(0);
 
@@ -1695,8 +1695,8 @@ window.MainModel = Backbone.Model.extend({
             // ropes
             this.instance = new lib.dialog_ropes();
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance}
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance}
             ]}).wait(6));
 
             // highlight
@@ -1709,379 +1709,379 @@ window.MainModel = Backbone.Model.extend({
             this.highlight_bodies = new lib.dialog_highlight_bodies();
             this.highlight_bodies.setTransform(164.5 * app.base_scale, 405 * app.base_scale, 1, 1, 0, 0, 0, 69.5 * app.base_scale, 130 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.highlight_heads}
-            ]}).to({state:[
-                {t:this.highlight_heads}
-            ]}, 1).to({state:[
-                {t:this.highlight_heads}
-            ]}, 1).to({state:[
-                {t:this.highlight_sets}
-            ]}, 1).to({state:[
-                {t:this.highlight_sets}
-            ]}, 1).to({state:[
-                {t:this.highlight_sets}
-            ]}, 1).to({state:[
-                {t:this.highlight_bodies}
-            ]}, 1).to({state:[
-                {t:this.highlight_bodies}
-            ]}, 1).to({state:[
-                {t:this.highlight_bodies}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.highlight_heads}
+            ]}).to({state: [
+                    {t: this.highlight_heads}
+                ]}, 1).to({state: [
+                    {t: this.highlight_heads}
+                ]}, 1).to({state: [
+                    {t: this.highlight_sets}
+                ]}, 1).to({state: [
+                    {t: this.highlight_sets}
+                ]}, 1).to({state: [
+                    {t: this.highlight_sets}
+                ]}, 1).to({state: [
+                    {t: this.highlight_bodies}
+                ]}, 1).to({state: [
+                    {t: this.highlight_bodies}
+                ]}, 1).to({state: [
+                    {t: this.highlight_bodies}
+                ]}, 1).wait(1));
 
             // m1h10
             this.select_m1h10 = new lib.heads_highlight();
             this.select_m1h10.setTransform(523 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m1h10).to({_off:true}, 1).wait(8));
+            this.timeline.addTween(cjs.Tween.get(this.select_m1h10).to({_off: true}, 1).wait(8));
 
             // m1h9
             this.select_m1h9 = new lib.heads_highlight();
             this.select_m1h9.setTransform(413 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m1h9).to({_off:true}, 1).wait(8));
+            this.timeline.addTween(cjs.Tween.get(this.select_m1h9).to({_off: true}, 1).wait(8));
 
             // m1h8
             this.select_m1h8 = new lib.heads_highlight();
             this.select_m1h8.setTransform(303 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m1h8).to({_off:true}, 1).wait(8));
+            this.timeline.addTween(cjs.Tween.get(this.select_m1h8).to({_off: true}, 1).wait(8));
 
             // m1h7
             this.select_m1h7 = new lib.heads_highlight();
             this.select_m1h7.setTransform(193 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m1h7).to({_off:true}, 1).wait(8));
+            this.timeline.addTween(cjs.Tween.get(this.select_m1h7).to({_off: true}, 1).wait(8));
 
             // m1h6
             this.select_m1h6 = new lib.heads_highlight();
             this.select_m1h6.setTransform(83 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m1h6).to({_off:true}, 1).wait(8));
+            this.timeline.addTween(cjs.Tween.get(this.select_m1h6).to({_off: true}, 1).wait(8));
 
             // m1h5
             this.select_m1h5 = new lib.heads_highlight();
             this.select_m1h5.setTransform(523 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m1h5).to({_off:true}, 1).wait(8));
+            this.timeline.addTween(cjs.Tween.get(this.select_m1h5).to({_off: true}, 1).wait(8));
 
             // m1h4
             this.select_m1h4 = new lib.heads_highlight();
             this.select_m1h4.setTransform(413 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m1h4).to({_off:true}, 1).wait(8));
+            this.timeline.addTween(cjs.Tween.get(this.select_m1h4).to({_off: true}, 1).wait(8));
 
             // m1h3
             this.select_m1h3 = new lib.heads_highlight();
             this.select_m1h3.setTransform(303 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m1h3).to({_off:true}, 1).wait(8));
+            this.timeline.addTween(cjs.Tween.get(this.select_m1h3).to({_off: true}, 1).wait(8));
 
             // m1h2
             this.select_m1h2 = new lib.heads_highlight();
             this.select_m1h2.setTransform(193 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m1h2).to({_off:true}, 1).wait(8));
+            this.timeline.addTween(cjs.Tween.get(this.select_m1h2).to({_off: true}, 1).wait(8));
 
             // m1h1
             this.select_m1h1 = new lib.heads_highlight();
             this.select_m1h1.setTransform(83 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m1h1).to({_off:true}, 1).wait(8));
+            this.timeline.addTween(cjs.Tween.get(this.select_m1h1).to({_off: true}, 1).wait(8));
 
             // w1h10
             this.select_w1h10 = new lib.heads_highlight();
             this.select_w1h10.setTransform(523 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_w1h10._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_w1h10).wait(1).to({_off:false}, 0).to({_off:true}, 1).wait(7));
+            this.timeline.addTween(cjs.Tween.get(this.select_w1h10).wait(1).to({_off: false}, 0).to({_off: true}, 1).wait(7));
 
             // w1h9
             this.select_w1h9 = new lib.heads_highlight();
             this.select_w1h9.setTransform(413 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_w1h9._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_w1h9).wait(1).to({_off:false}, 0).to({_off:true}, 1).wait(7));
+            this.timeline.addTween(cjs.Tween.get(this.select_w1h9).wait(1).to({_off: false}, 0).to({_off: true}, 1).wait(7));
 
             // w1h8
             this.select_w1h8 = new lib.heads_highlight();
             this.select_w1h8.setTransform(303 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_w1h8._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_w1h8).wait(1).to({_off:false}, 0).to({_off:true}, 1).wait(7));
+            this.timeline.addTween(cjs.Tween.get(this.select_w1h8).wait(1).to({_off: false}, 0).to({_off: true}, 1).wait(7));
 
             // w1h7
             this.select_w1h7 = new lib.heads_highlight();
             this.select_w1h7.setTransform(193 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_w1h7._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_w1h7).wait(1).to({_off:false}, 0).to({_off:true}, 1).wait(7));
+            this.timeline.addTween(cjs.Tween.get(this.select_w1h7).wait(1).to({_off: false}, 0).to({_off: true}, 1).wait(7));
 
             // w1h6
             this.select_w1h6 = new lib.heads_highlight();
             this.select_w1h6.setTransform(83 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_w1h6._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_w1h6).wait(1).to({_off:false}, 0).to({_off:true}, 1).wait(7));
+            this.timeline.addTween(cjs.Tween.get(this.select_w1h6).wait(1).to({_off: false}, 0).to({_off: true}, 1).wait(7));
 
             // w1h5
             this.select_w1h5 = new lib.heads_highlight();
             this.select_w1h5.setTransform(523 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_w1h5._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_w1h5).wait(1).to({_off:false}, 0).to({_off:true}, 1).wait(7));
+            this.timeline.addTween(cjs.Tween.get(this.select_w1h5).wait(1).to({_off: false}, 0).to({_off: true}, 1).wait(7));
 
             // w1h4
             this.select_w1h4 = new lib.heads_highlight();
             this.select_w1h4.setTransform(413 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_w1h4._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_w1h4).wait(1).to({_off:false}, 0).to({_off:true}, 1).wait(7));
+            this.timeline.addTween(cjs.Tween.get(this.select_w1h4).wait(1).to({_off: false}, 0).to({_off: true}, 1).wait(7));
 
             // w1h3
             this.select_w1h3 = new lib.heads_highlight();
             this.select_w1h3.setTransform(303 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_w1h3._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_w1h3).wait(1).to({_off:false}, 0).to({_off:true}, 1).wait(7));
+            this.timeline.addTween(cjs.Tween.get(this.select_w1h3).wait(1).to({_off: false}, 0).to({_off: true}, 1).wait(7));
 
             // w1h2
             this.select_w1h2 = new lib.heads_highlight();
             this.select_w1h2.setTransform(193 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_w1h2._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_w1h2).wait(1).to({_off:false}, 0).to({_off:true}, 1).wait(7));
+            this.timeline.addTween(cjs.Tween.get(this.select_w1h2).wait(1).to({_off: false}, 0).to({_off: true}, 1).wait(7));
 
             // w1h1
             this.select_w1h1 = new lib.heads_highlight();
             this.select_w1h1.setTransform(83 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_w1h1._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_w1h1).wait(1).to({_off:false}, 0).to({_off:true}, 1).wait(7));
+            this.timeline.addTween(cjs.Tween.get(this.select_w1h1).wait(1).to({_off: false}, 0).to({_off: true}, 1).wait(7));
 
             // m2h10
             this.select_m2h10 = new lib.heads_highlight();
             this.select_m2h10.setTransform(523 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_m2h10._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m2h10).wait(2).to({_off:false}, 0).to({_off:true}, 1).wait(6));
+            this.timeline.addTween(cjs.Tween.get(this.select_m2h10).wait(2).to({_off: false}, 0).to({_off: true}, 1).wait(6));
 
             // m2h9
             this.select_m2h9 = new lib.heads_highlight();
             this.select_m2h9.setTransform(413 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_m2h9._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m2h9).wait(2).to({_off:false}, 0).to({_off:true}, 1).wait(6));
+            this.timeline.addTween(cjs.Tween.get(this.select_m2h9).wait(2).to({_off: false}, 0).to({_off: true}, 1).wait(6));
 
             // m2h8
             this.select_m2h8 = new lib.heads_highlight();
             this.select_m2h8.setTransform(303 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_m2h8._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m2h8).wait(2).to({_off:false}, 0).to({_off:true}, 1).wait(6));
+            this.timeline.addTween(cjs.Tween.get(this.select_m2h8).wait(2).to({_off: false}, 0).to({_off: true}, 1).wait(6));
 
             // m2h7
             this.select_m2h7 = new lib.heads_highlight();
             this.select_m2h7.setTransform(193 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_m2h7._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m2h7).wait(2).to({_off:false}, 0).to({_off:true}, 1).wait(6));
+            this.timeline.addTween(cjs.Tween.get(this.select_m2h7).wait(2).to({_off: false}, 0).to({_off: true}, 1).wait(6));
 
             // m2h6
             this.select_m2h6 = new lib.heads_highlight();
             this.select_m2h6.setTransform(83 * app.base_scale, 508.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_m2h6._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m2h6).wait(2).to({_off:false}, 0).to({_off:true}, 1).wait(6));
+            this.timeline.addTween(cjs.Tween.get(this.select_m2h6).wait(2).to({_off: false}, 0).to({_off: true}, 1).wait(6));
 
             // m2h5
             this.select_m2h5 = new lib.heads_highlight();
             this.select_m2h5.setTransform(523 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_m2h5._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m2h5).wait(2).to({_off:false}, 0).to({_off:true}, 1).wait(6));
+            this.timeline.addTween(cjs.Tween.get(this.select_m2h5).wait(2).to({_off: false}, 0).to({_off: true}, 1).wait(6));
 
             // m2h4
             this.select_m2h4 = new lib.heads_highlight();
             this.select_m2h4.setTransform(413 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_m2h4._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m2h4).wait(2).to({_off:false}, 0).to({_off:true}, 1).wait(6));
+            this.timeline.addTween(cjs.Tween.get(this.select_m2h4).wait(2).to({_off: false}, 0).to({_off: true}, 1).wait(6));
 
             // m2h3
             this.select_m2h3 = new lib.heads_highlight();
             this.select_m2h3.setTransform(303 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_m2h3._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m2h3).wait(2).to({_off:false}, 0).to({_off:true}, 1).wait(6));
+            this.timeline.addTween(cjs.Tween.get(this.select_m2h3).wait(2).to({_off: false}, 0).to({_off: true}, 1).wait(6));
 
             // m2h2
             this.select_m2h2 = new lib.heads_highlight();
             this.select_m2h2.setTransform(193 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_m2h2._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m2h2).wait(2).to({_off:false}, 0).to({_off:true}, 1).wait(6));
+            this.timeline.addTween(cjs.Tween.get(this.select_m2h2).wait(2).to({_off: false}, 0).to({_off: true}, 1).wait(6));
 
             // m2h1
             this.select_m2h1 = new lib.heads_highlight();
             this.select_m2h1.setTransform(83 * app.base_scale, 338.5 * app.base_scale, 1, 1, 0, 0, 0, 49 * app.base_scale, 81.5 * app.base_scale);
             this.select_m2h1._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_m2h1).wait(2).to({_off:false}, 0).to({_off:true}, 1).wait(6));
+            this.timeline.addTween(cjs.Tween.get(this.select_m2h1).wait(2).to({_off: false}, 0).to({_off: true}, 1).wait(6));
 
             // s1m4
             this.select_s1m4 = new lib.sets_highlight();
             this.select_s1m4.setTransform(511 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_s1m4._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_s1m4).wait(3).to({_off:false}, 0).to({_off:true}, 1).wait(5));
+            this.timeline.addTween(cjs.Tween.get(this.select_s1m4).wait(3).to({_off: false}, 0).to({_off: true}, 1).wait(5));
 
             // s1m3
             this.select_s1m3 = new lib.sets_highlight();
             this.select_s1m3.setTransform(372 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_s1m3._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_s1m3).wait(3).to({_off:false}, 0).to({_off:true}, 1).wait(5));
+            this.timeline.addTween(cjs.Tween.get(this.select_s1m3).wait(3).to({_off: false}, 0).to({_off: true}, 1).wait(5));
 
             // s1m2
             this.select_s1m2 = new lib.sets_highlight();
             this.select_s1m2.setTransform(233 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_s1m2._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_s1m2).wait(3).to({_off:false}, 0).to({_off:true}, 1).wait(5));
+            this.timeline.addTween(cjs.Tween.get(this.select_s1m2).wait(3).to({_off: false}, 0).to({_off: true}, 1).wait(5));
 
             // s1m1
             this.select_s1m1 = new lib.sets_highlight();
             this.select_s1m1.setTransform(94 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_s1m1._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_s1m1).wait(3).to({_off:false}, 0).to({_off:true}, 1).wait(5));
+            this.timeline.addTween(cjs.Tween.get(this.select_s1m1).wait(3).to({_off: false}, 0).to({_off: true}, 1).wait(5));
 
             // s1d4
             this.select_s1d4 = new lib.sets_highlight();
             this.select_s1d4.setTransform(511 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_s1d4._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_s1d4).wait(4).to({_off:false}, 0).to({_off:true}, 1).wait(4));
+            this.timeline.addTween(cjs.Tween.get(this.select_s1d4).wait(4).to({_off: false}, 0).to({_off: true}, 1).wait(4));
 
             // s1d3
             this.select_s1d3 = new lib.sets_highlight();
             this.select_s1d3.setTransform(372 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_s1d3._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_s1d3).wait(4).to({_off:false}, 0).to({_off:true}, 1).wait(4));
+            this.timeline.addTween(cjs.Tween.get(this.select_s1d3).wait(4).to({_off: false}, 0).to({_off: true}, 1).wait(4));
 
             // s1d2
             this.select_s1d2 = new lib.sets_highlight();
             this.select_s1d2.setTransform(233 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_s1d2._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_s1d2).wait(4).to({_off:false}, 0).to({_off:true}, 1).wait(4));
+            this.timeline.addTween(cjs.Tween.get(this.select_s1d2).wait(4).to({_off: false}, 0).to({_off: true}, 1).wait(4));
 
             // s1d1
             this.select_s1d1 = new lib.sets_highlight();
             this.select_s1d1.setTransform(94 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_s1d1._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_s1d1).wait(4).to({_off:false}, 0).to({_off:true}, 1).wait(4));
+            this.timeline.addTween(cjs.Tween.get(this.select_s1d1).wait(4).to({_off: false}, 0).to({_off: true}, 1).wait(4));
 
             // s1b4
             this.select_s1b4 = new lib.sets_highlight();
             this.select_s1b4.setTransform(511 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_s1b4._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_s1b4).wait(5).to({_off:false}, 0).to({_off:true}, 1).wait(3));
+            this.timeline.addTween(cjs.Tween.get(this.select_s1b4).wait(5).to({_off: false}, 0).to({_off: true}, 1).wait(3));
 
             // s1b3
             this.select_s1b3 = new lib.sets_highlight();
             this.select_s1b3.setTransform(372 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_s1b3._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_s1b3).wait(5).to({_off:false}, 0).to({_off:true}, 1).wait(3));
+            this.timeline.addTween(cjs.Tween.get(this.select_s1b3).wait(5).to({_off: false}, 0).to({_off: true}, 1).wait(3));
 
             // s1b2
             this.select_s1b2 = new lib.sets_highlight();
             this.select_s1b2.setTransform(233 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_s1b2._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_s1b2).wait(5).to({_off:false}, 0).to({_off:true}, 1).wait(3));
+            this.timeline.addTween(cjs.Tween.get(this.select_s1b2).wait(5).to({_off: false}, 0).to({_off: true}, 1).wait(3));
 
             // s1b1
             this.select_s1b1 = new lib.sets_highlight();
             this.select_s1b1.setTransform(94 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_s1b1._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_s1b1).wait(5).to({_off:false}, 0).to({_off:true}, 1).wait(3));
+            this.timeline.addTween(cjs.Tween.get(this.select_s1b1).wait(5).to({_off: false}, 0).to({_off: true}, 1).wait(3));
 
             // c1b1
             this.select_c1b3 = new lib.bodies_highlight();
             this.select_c1b3.setTransform(442 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_c1b3._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_c1b3).wait(6).to({_off:false}, 0).to({_off:true}, 1).wait(2));
+            this.timeline.addTween(cjs.Tween.get(this.select_c1b3).wait(6).to({_off: false}, 0).to({_off: true}, 1).wait(2));
 
             // c1b2
             this.select_c1b2 = new lib.bodies_highlight();
             this.select_c1b2.setTransform(302 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_c1b2._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_c1b2).wait(6).to({_off:false}, 0).to({_off:true}, 1).wait(2));
+            this.timeline.addTween(cjs.Tween.get(this.select_c1b2).wait(6).to({_off: false}, 0).to({_off: true}, 1).wait(2));
 
             // c1b3
             this.select_c1b1 = new lib.bodies_highlight();
             this.select_c1b1.setTransform(164 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_c1b1._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_c1b1).wait(6).to({_off:false}, 0).to({_off:true}, 1).wait(2));
+            this.timeline.addTween(cjs.Tween.get(this.select_c1b1).wait(6).to({_off: false}, 0).to({_off: true}, 1).wait(2));
 
             // c2b3
             this.select_c2b3 = new lib.bodies_highlight();
             this.select_c2b3.setTransform(442 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_c2b3._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_c2b3).wait(7).to({_off:false}, 0).to({_off:true}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get(this.select_c2b3).wait(7).to({_off: false}, 0).to({_off: true}, 1).wait(1));
 
             // c2b2
             this.select_c2b2 = new lib.bodies_highlight();
             this.select_c2b2.setTransform(302 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_c2b2._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_c2b2).wait(7).to({_off:false}, 0).to({_off:true}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get(this.select_c2b2).wait(7).to({_off: false}, 0).to({_off: true}, 1).wait(1));
 
             // c2b1
             this.select_c2b1 = new lib.bodies_highlight();
             this.select_c2b1.setTransform(164 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_c2b1._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_c2b1).wait(7).to({_off:false}, 0).to({_off:true}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get(this.select_c2b1).wait(7).to({_off: false}, 0).to({_off: true}, 1).wait(1));
 
             // c3b3
             this.select_c3b3 = new lib.bodies_highlight();
             this.select_c3b3.setTransform(442 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_c3b3._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_c3b3).wait(8).to({_off:false}, 0).wait(1));
+            this.timeline.addTween(cjs.Tween.get(this.select_c3b3).wait(8).to({_off: false}, 0).wait(1));
 
             // c3b2
             this.select_c3b2 = new lib.bodies_highlight();
             this.select_c3b2.setTransform(302 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_c3b2._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_c3b2).wait(8).to({_off:false}, 0).wait(1));
+            this.timeline.addTween(cjs.Tween.get(this.select_c3b2).wait(8).to({_off: false}, 0).wait(1));
 
             // c3b1
             this.select_c3b1 = new lib.bodies_highlight();
             this.select_c3b1.setTransform(164 * app.base_scale, 435 * app.base_scale, 1, 1, 0, 0, 0, 69 * app.base_scale, 160 * app.base_scale);
             this.select_c3b1._off = true;
 
-            this.timeline.addTween(cjs.Tween.get(this.select_c3b1).wait(8).to({_off:false}, 0).wait(1));
+            this.timeline.addTween(cjs.Tween.get(this.select_c3b1).wait(8).to({_off: false}, 0).wait(1));
 
             // cancel
             this.cancel_btn = new lib.cancel();
             this.cancel_btn.setTransform(516 * app.base_scale, 215 * app.base_scale);
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.cancel_btn}
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.cancel_btn}
             ]}).wait(9));
 
             // box
@@ -2162,13 +2162,13 @@ window.MainModel = Backbone.Model.extend({
                         app.exportRoot.dialogs.highlight_bodies.y = this.c3bly;
                     }
 
-                    cjs.Tween.get(this).to({y:-110 * app.base_scale}, 750, cjs.Ease.backInOut);
+                    cjs.Tween.get(this).to({y: -110 * app.base_scale}, 750, cjs.Ease.backInOut);
                     app.exportRoot.shadow_box.show();
                 }
             };
 
             this.hide_dialog = function () {
-                cjs.Tween.get(this).to({y:-630 * app.base_scale}, 500, cjs.Ease.backIn);
+                cjs.Tween.get(this).to({y: -630 * app.base_scale}, 500, cjs.Ease.backIn);
                 app.exportRoot.shadow_box.hide();
             };
 
@@ -2324,25 +2324,25 @@ window.MainModel = Backbone.Model.extend({
                 }
             }
 
-            this.timeline.addTween(cjs.Tween.get({}).to({state:[
-                {t:this.instance_2}
-            ]}).to({state:[
-                {t:this.instance_3}
-            ]}, 1).to({state:[
-                {t:this.instance_4}
-            ]}, 1).to({state:[
-                {t:this.instance_5}
-            ]}, 1).to({state:[
-                {t:this.instance_6}
-            ]}, 1).to({state:[
-                {t:this.instance_7}
-            ]}, 1).to({state:[
-                {t:this.instance_8}
-            ]}, 1).to({state:[
-                {t:this.instance_9}
-            ]}, 1).to({state:[
-                {t:this.instance_10}
-            ]}, 1).wait(1));
+            this.timeline.addTween(cjs.Tween.get({}).to({state: [
+                {t: this.instance_2}
+            ]}).to({state: [
+                    {t: this.instance_3}
+                ]}, 1).to({state: [
+                    {t: this.instance_4}
+                ]}, 1).to({state: [
+                    {t: this.instance_5}
+                ]}, 1).to({state: [
+                    {t: this.instance_6}
+                ]}, 1).to({state: [
+                    {t: this.instance_7}
+                ]}, 1).to({state: [
+                    {t: this.instance_8}
+                ]}, 1).to({state: [
+                    {t: this.instance_9}
+                ]}, 1).to({state: [
+                    {t: this.instance_10}
+                ]}, 1).wait(1));
             this.gotoAndStop(0);
 
         }).prototype = p = new cjs.MovieClip();
@@ -2438,7 +2438,7 @@ window.MainModel = Backbone.Model.extend({
                     }
                 }
                 var xpos = -(833 * num) * app.base_scale;
-                cjs.Tween.get(this.backgrounds).to({x:xpos}, 2500, cjs.Ease.cubicInOut);
+                cjs.Tween.get(this.backgrounds).to({x: xpos}, 2500, cjs.Ease.cubicInOut);
                 app.exportRoot.dialogs.hide_dialog();
             };
 
