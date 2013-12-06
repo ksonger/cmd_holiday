@@ -46,13 +46,13 @@ window.MainModel = Backbone.Model.extend({
         (this.opening_sign = function () {
             this.initialize(img.opening_sign);
 
-            this.onPress = function (e) {
+            this.onPress = function () {
                 app.auto_open();
             };
-            this.onMouseOver = function (e) {
+            this.onMouseOver = function () {
                 document.body.style.cursor = 'pointer';
             };
-            this.onMouseOut = function (e) {
+            this.onMouseOut = function () {
                 document.body.style.cursor = 'default';
             };
         }).prototype = new cjs.Bitmap();
@@ -293,12 +293,14 @@ window.MainModel = Backbone.Model.extend({
                     app.exportRoot.decorations.alpha = 1;
                     app.exportRoot.decorations.setTransform(250 * app.base_scale, -200 * app.base_scale, 1, 1);
                     if (this.selectedElement == "snow") {
+
                         app.exportRoot.decorations.deco1.rotation = 60;
                         app.exportRoot.decorations.deco1.y = 0;
                         app.exportRoot.decorations.deco2.rotation = -60;
                         app.exportRoot.decorations.deco3.rotation = 80;
                         app.exportRoot.decorations.deco3.y = 0;
                         app.exportRoot.decorations.deco4.rotation = -90;
+
                         cjs.Tween.get(app.exportRoot.decorations).wait(100).to({y: 70 * app.base_scale}, 500, cjs.Ease.backOut);
                         cjs.Tween.get(app.exportRoot.decorations.deco1).wait(150).to({rotation: 0, y: 56 * app.base_scale}, 600, cjs.Ease.circOut);
                         cjs.Tween.get(app.exportRoot.decorations.deco2).wait(230).to({rotation: 0}, 400, cjs.Ease.circOut);
@@ -312,6 +314,7 @@ window.MainModel = Backbone.Model.extend({
                         app.exportRoot.decorations.deco3.rotation = -60;
                         app.exportRoot.decorations.deco4.rotation = 60;
                         app.exportRoot.decorations.deco4.y = 0;
+
                         cjs.Tween.get(app.exportRoot.decorations).wait(100).to({y: 70 * app.base_scale}, 500, cjs.Ease.backOut);
                         cjs.Tween.get(app.exportRoot.decorations.deco1).wait(150).to({rotation: 0, y: 56 * app.base_scale}, 600, cjs.Ease.circOut);
                         cjs.Tween.get(app.exportRoot.decorations.deco2).wait(230).to({rotation: 0, y: 197 * app.base_scale}, 400, cjs.Ease.circOut);
