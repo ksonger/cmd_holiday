@@ -7,12 +7,12 @@
  */
 
 var isIE8 = function()  {
+    var result = false;
     if(/msie/i.test(navigator.userAgent) && $.browser.version < 9)  {
-        return true;
-    }   else    {
-        return false;
+        result = true;
     }
-}
+    return result;
+};
 
 var serveStatic = function()    {
     jQuery('<div/>', {
@@ -22,10 +22,11 @@ var serveStatic = function()    {
     jQuery('<div/>', {
         id:"loader"
     }).appendTo("#main");
-    var img_url = "url('./images/100/static.jpg')";
-    $("#loader").css({"background":img_url, "width":"738px", "height":"715px", "top":"10%", "position":"absolute", "align":"center"});
-    $("#loader").css({"left":(($(window).width() - $("#loader").width()) / 2) + "px"});
-}
+    var img_url = "url('./images/100/static.jpg')",
+        loader = $("#loader");
+    loader.css({"background":img_url, "width":"738px", "height":"715px", "top":"10%", "position":"absolute", "align":"center"});
+    loader.css({"left":(($(window).width() - loader.width()) / 2) + "px"});
+};
 
 if(isIE8()) {
     serveStatic();

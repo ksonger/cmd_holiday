@@ -9,6 +9,7 @@ Backbone.View.prototype.close = function () {
 var app;
 
 var AppRouter = Backbone.Router.extend({
+
     manifest:null,
     errors:0,
     canvas:null,
@@ -32,6 +33,7 @@ var AppRouter = Backbone.Router.extend({
     muted:false,
     backgroundChecked:false,
     currentBgx:0,
+
     initialize:function () {
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) || this.isTablet || this.isPhone) {
                 if ($(window).width() > 480 || this.isTablet) {
@@ -53,9 +55,7 @@ var AppRouter = Backbone.Router.extend({
             this.lib = this.lib || {};
             this.images = this.images || {};
             this.createjs = createjs || {};
-            this.error_manifest = [
-                {src:this.base_url + "prompts/prompt2.png", id:"click_prompt"}
-            ];
+
             this.manifest = [
                 {src:this.base_url + "backgrounds/stage_background.jpg", id:"background_blue"},
                 {src:this.base_url + "backgrounds/background_00_option2_filmleader.jpg", id:"backscreen_opt1"},
@@ -161,14 +161,19 @@ var AppRouter = Backbone.Router.extend({
                 {id:"wolf", src:"sound/wolf.mp3|sound/wolf.ogg"}
             ];
     },
+
     routes:{
         "":"index"
     },
+
     index:function () {
         this.begin();
     },
 
-    begin:function (callback) {
+    begin:function () {
+
+        var loader = $("#loader");
+
         if(!isIE8())    {
             jQuery('<div/>', {
                 id:"main"
@@ -184,7 +189,7 @@ var AppRouter = Backbone.Router.extend({
             if (this.isPhone) {
                 img_url = "url('./images/32/loader.jpg')";
             }
-            $("#loader").css({"background":img_url, "width":695 * this.base_scale + "px", "height":642 * this.base_scale + "px", "top":"10%", "position":"absolute", "align":"center"});
+            loader.css({"background":img_url, "width":695 * this.base_scale + "px", "height":642 * this.base_scale + "px", "top":"10%", "position":"absolute", "align":"center"});
 
             jQuery('<div/>', {
                 class:"loadingBar"
@@ -200,7 +205,7 @@ var AppRouter = Backbone.Router.extend({
             });
 
 
-            $("#loader").css({"left":(($(window).width() - $("#loader").width()) / 2) + "px"});
+            loader.css({"left":(($(window).width() - loader.width()) / 2) + "px"});
             this.loader = new createjs.PreloadJS(false);
             this.loader.installPlugin(createjs.SoundJS);
             this.loader.onFileLoad = this.handleFileLoad;
@@ -208,15 +213,16 @@ var AppRouter = Backbone.Router.extend({
             this.loader.onComplete = this.handleComplete;
             this.loader.onFileProgress = this.handleFileProgress;
             this.loader.onError = this.handleFileError;
-
             this.loader.loadManifest(this.manifest);
         }
     },
+
     handleFileLoad:function (o) {
         if (o.type == "image") {
             app.images[o.id] = o.result;
         }
     },
+
     handleComplete:function () {
         if (app.errors == 0) {
             TweenMax.to($(".loadingBar"), 0.4, {css:{autoAlpha:0}, onComplete:function () {
@@ -230,7 +236,12 @@ var AppRouter = Backbone.Router.extend({
             app.loader.loadManifest(app.manifest);
         }
     },
+
     showPlay:function () {
+
+        var loader = $("#loader"),
+            play = $(".playButton");
+
         jQuery('<div/>', {
             class:"playButton"
         }).appendTo("#loader");
@@ -242,11 +253,11 @@ var AppRouter = Backbone.Router.extend({
         if (this.isPhone) {
             img_url = "url('./images/32/play.jpg')";
         }
-        $(".playButton").css({"visibility":"hidden", "background":img_url, "cursor":"pointer", "top":410 * app.base_scale + "px", "left":160 * app.base_scale + "px", "width":375 * app.base_scale + "px", "height":76 * app.base_scale + "px", "position":"relative", "align":"center"});
-        TweenMax.to($(".playButton"), 0.4, {css:{autoAlpha:1}, delay:.5});
-        $(".playButton").click(function () {
-            TweenMax.to($("#loader"), 0.4, {css:{autoAlpha:0}, onComplete:function () {
-                $("#loader").remove();
+        play.css({"visibility":"hidden", "background":img_url, "cursor":"pointer", "top":410 * app.base_scale + "px", "left":160 * app.base_scale + "px", "width":375 * app.base_scale + "px", "height":76 * app.base_scale + "px", "position":"relative", "align":"center"});
+        TweenMax.to(play, 0.4, {css:{autoAlpha:1}, delay:.5});
+        play.click(function () {
+            TweenMax.to(loader, 0.4, {css:{autoAlpha:0}, onComplete:function () {
+                loader.remove();
                 app.lib = new MainModel();
                 app.lib.build(app.lib, app.images, app.createjs);
                 app.currentBgx = -833 * app.base_scale;
@@ -261,6 +272,7 @@ var AppRouter = Backbone.Router.extend({
             }});
         })
     },
+
     loadFrost:function () {
         //add the frost
         var frost_loader = new createjs.PreloadJS(false);
@@ -268,16 +280,20 @@ var AppRouter = Backbone.Router.extend({
         frost_loader.onFileLoad = this.handleFileLoad;
         frost_loader.loadFile({src:this.base_url + "shop/frost.png", id:"shopwindow_frost"});
     },
+
     handleFrostComplete:function () {
         app.exportRoot.window_frame.addFrost();
     },
-    handleOverallProgress:function (e) {
+
+    handleOverallProgress:function () {
         var perc = app.loader.progress * 100;
         TweenMax.to($("#loadingFill"), 0.2, {css:{'width':perc + '%'}});
     },
+
     handleFileProgress:function (e) {
 
     },
+
     handleFileError:function (e) {
         app.errors++;
         for (var el in e) {
@@ -287,16 +303,21 @@ var AppRouter = Backbone.Router.extend({
             }
         }
     },
+
     clearClickTimeout:function () {
         self.clearTimeout(app.clickTimeout);
     },
+
     tick:function () {
-        if ($("#main") != null) {
+
+        var main = $("#main");
+
+        if (main != null) {
             $(window).resize();
         }
         app.stage.update();
         try {
-            var pct = $("#main").getNiceScroll()[0].cursor[0].offsetTop / ($("#main").getNiceScroll()[0].scrollvaluemax);
+            var pct = main.getNiceScroll()[0].cursor[0].offsetTop / (main.getNiceScroll()[0].scrollvaluemax);
             app.exportRoot.anim.gotoAndStop(app.exportRoot.anim.duration * pct);
             if (pct == 1 && app.clickTimeout == null) {
                 app.clickTimeout = self.setTimeout("app.mainView.showClickPrompt()", 2500);
@@ -318,6 +339,7 @@ var AppRouter = Backbone.Router.extend({
 
         }
     },
+
     checkBackground:function()  {
         //console.log("check");
         app.backgroundChecked = true;
@@ -328,9 +350,11 @@ var AppRouter = Backbone.Router.extend({
         }
         app.currentBgx = xpos;
     },
+
     auto_open:function () {
         TweenMax.to($("#main").getNiceScroll()[0], 2, {'scrollTop':4000, ease:Sine.easeInOut});
     },
+
     getBounds:function (obj) {
         var bounds = {x:Infinity, y:Infinity, width:0, height:0};
 
@@ -380,26 +404,37 @@ tpl.loadTemplates([
     app = new AppRouter();
     Backbone.history.start();
 });
+
 var ww = $(window).width();
 var wh = $(window).height();
+
 $(window).resize(function () {
-    $("#main").height($(window).height());
-    $("#canvas").css({"left":(($(window).width() - $("#canvas").width()) / 2) + "px"});
-    $("#loader").css({"left":(($(window).width() - $("#loader").width()) / 2) + "px"});
-    $("#canvas").css({"left":(($(window).width() - $("#canvas").width()) / 2) + "px", "height":$("#canvas").width() * .6666666666666666});
-    if ($("#scrollPrompt").css("visibility") == "visible") {
-        $("#scrollPrompt").css({"left":ww - 120 + "px"});
+
+    var loader = $("#loader"),
+        canvas = $("#canvas"),
+        main = $("#main"),
+        prompt = $("#scrollPrompt");
+
+    main.height($(window).height());
+    canvas.css({"left":(($(window).width() - canvas.width()) / 2) + "px"});
+    loader.css({"left":(($(window).width() - loader.width()) / 2) + "px"});
+    canvas.css({"left":(($(window).width() - canvas.width()) / 2) + "px", "height":canvas.width() * .6666666666666666});
+
+    if (prompt.css("visibility") == "visible") {
+        prompt.css({"left":ww - 120 + "px"});
     }
+
     try {
-        $("#main").getNiceScroll()[0].updateScrollBar();
-        $("#main").getNiceScroll()[0].onResize();
-        if ($("#main").getNiceScroll()[0].getScrollTop() != 0 && $("#scrollPrompt").css("visibility") != "hidden") {
-            $("#scrollPrompt").css({"visibility":"hidden"});
+        main.getNiceScroll()[0].updateScrollBar();
+        main.getNiceScroll()[0].onResize();
+        if (main.getNiceScroll()[0].getScrollTop() != 0 && prompt.css("visibility") != "hidden") {
+            prompt.css({"visibility":"hidden"});
         }
 
     } catch (e) {
 
     }
+
     wh = $(window).height();
     ww = $(window).width();
 });

@@ -11,24 +11,34 @@ window.MainView = Backbone.View.extend({
     p:null,
     sequence:[],
     anim:null,
+
     initialize:function () {
         this.render();
     },
-    render:function (eventName) {
+
+    render:function () {
+
         var cjs = app.createjs;
+
         this.$el.attr({id:"card"});
         this.$el.html("<canvas id='canvas' width='" + app.base_width + "px' height='" + app.base_height + "px'></canvas>");
         this.$el.find("#canvas").css({"background":"#000000", "position":"fixed", "width":"100%", "max-width":app.base_width + "px", "visibility":"hidden"});
         this.$el.appendTo("#main");
+
         TweenMax.to($("#canvas"), .01, {css:{autoAlpha:0}});
+
         app.canvas = document.getElementById("canvas");
+
         this.card.prototype = this.p = new cjs.Container();
         this.p.nominalBounds = new cjs.Rectangle(-494.4, 0, 3057, 640);
+
         app.exportRoot = new this.card();
+
         app.stage = new app.createjs.Stage(app.canvas);
         app.stage.addChild(app.exportRoot);
         app.stage.enableMouseOver();
         app.stage.update();
+
         app.createjs.Ticker.setFPS(24);
         app.createjs.Ticker.addListener(app);
 
@@ -36,15 +46,21 @@ window.MainView = Backbone.View.extend({
 
         return this;
     },
+
     showClickPrompt:function () {
         app.createjs.Tween.get(app.exportRoot.click_prompt).to({alpha:1}, 1000, app.createjs.Ease.cubicOut)
     },
+
     hideClickPrompt:function () {
         app.createjs.Tween.get(app.exportRoot.click_prompt).to({alpha:0}, 1000, app.createjs.Ease.cubicOut)
     },
+
     card:function () {
-        var cjs = app.createjs;
+        var cjs = app.createjs,
+            main = $("#main");
+
         this.initialize();
+
         // bluebackground
         this.bbg = new app.lib.background_blue();
         this.bbg.setTransform(258 * app.base_scale, 72 * app.base_scale);
@@ -132,17 +148,21 @@ window.MainView = Backbone.View.extend({
 
         this.anim = new app.createjs.Timeline(this.sequence, null, {paused:true});
 
-        $("#main").niceScroll({cursorcolor:"#ffffe2", cursorborder:"1px solid #ffffe2", cursorwidth:"10px", cursoropacitymax:.9, cursoropacitymin:0, cursorborderradius:"6px", "autohidemode":false});
-        $("#main").getNiceScroll()[0].setScrollTop(0);
+        main.niceScroll({cursorcolor:"#ffffe2", cursorborder:"1px solid #ffffe2", cursorwidth:"10px", cursoropacitymax:.9, cursoropacitymin:0, cursorborderradius:"6px", "autohidemode":false});
+        main.getNiceScroll()[0].setScrollTop(0);
 
         TweenMax.to($("#canvas"), 1.2, {css:{autoAlpha:1}, delay:.5});
     },
+
     scrollPrompt:function () {
+
+        var prompt = $("#scrollPrompt");
+
         jQuery('<div/>', {
             id:"scrollPrompt"
         }).appendTo("body");
-        TweenMax.to($("#scrollPrompt"), 0.01, {css:{autoAlpha:0}});
-        $("#scrollPrompt").html("<div width='120px'><img src='" + app.base_url + "prompts/prompt1.gif'></div>");
-        TweenMax.to($("#scrollPrompt"), 0.7, {css:{autoAlpha:1}});
+        TweenMax.to(prompt, 0.01, {css:{autoAlpha:0}});
+        prompt.html("<div width='120px'><img src='" + app.base_url + "prompts/prompt1.gif'></div>");
+        TweenMax.to(prompt, 0.7, {css:{autoAlpha:1}});
     }
 });
